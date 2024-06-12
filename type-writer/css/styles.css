@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#display-board {
+    display: flex;
+    width: 80%;
+    /*height: 100vh;*/
+    align-items: center;
+    justify-content: center;
+
+    font-size: 5.5vw;
+    background-color: lightgray;
+    border-radius: 5px;
+}
+
+#cursor {
+    background-color: red;
+    margin-left: 10px;
+    width: 0.4em;
+    height: 1em;
+    border-radius: 5px;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-duration: 850ms;
+
+}
+@keyframes blink {
+    from {
+        opacity: 1;
+        background-color: blue;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
