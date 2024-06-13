@@ -50,10 +50,11 @@ for (let i = 0; i < 50; i++) {
             dy = -dy;
 
             if (d < (r1 + r2)) {
-                if (dx < 0) left -= ((r1 - d)/(2**0.5) + r2 + 2);
-                else left += ((r1 - d)/(2**0.5) + r2 + 2);
-                if (dy < 0) top -= ((r1 - d)/(2**0.5) + r2 + 2);
-                else top += ((r1 - d)/(2**0.5) + r2 + 2);
+                let moveD = ((r1 - d) / (2 ** 0.5) + r2 + 2);
+                if (dx < 0) left -= moveD;
+                else left += moveD;
+                if (dy < 0) top -= moveD;
+                else top += moveD;
                 particle.style.left = `${left}px`;
                 particle.style.top = `${top}px`;
             }
