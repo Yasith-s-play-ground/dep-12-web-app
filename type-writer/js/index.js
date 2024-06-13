@@ -11,21 +11,23 @@ let arrayItem;
 let letterTmr;
 
 function displayText(index) {
-
     setInterval(function () {
+
         spanElm.innerText = "";
 
         displayWordsLetterByLetter(displayItems[index], 0);
 
-        let eraseIndex = displayItems[index].length - 1;
-        // console.log(spanElm.innerText);
-        // let eraseTmr = setInterval(function () {
-        //     spanElm.innerText = displayItems[index].substring(0, eraseIndex--);
-        //     if (eraseIndex === 0) clearInterval(eraseTmr);
-        // }, 25);
+        // setTimeout(function () {
+        //     let eraseIndex = displayItems[index].length - 1;
+        //     console.log(spanElm.innerText);
+        //     let eraseTmr = setInterval(function () {
+        //         spanElm.innerText = displayItems[index].substring(0, eraseIndex);
+        //         if (eraseIndex-- === 0) clearInterval(eraseTmr);
+        //     }, 50);
+        // }, 75 * displayItems[index].length);
 
         if (index++ === displayItems.length - 1) index = 0;
-    }, 2000);
+    }, 75 * displayItems[index].length*2);
 
     //displayText(++index);
 }
@@ -38,6 +40,8 @@ function displayWordsLetterByLetter(arrayItem, letterIndex) {
         spanElm.innerHTML += arrayItem.charAt(letterIndex++);
         if (letterIndex === arrayItem.length) clearInterval(letterTmr);
     }, 75);
+
+    return true;
 
 
 }
