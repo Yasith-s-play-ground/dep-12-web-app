@@ -6,25 +6,25 @@ const shadowColours = ['red', 'green', 'blue'];
 let shadowColourIndex = 0;
 
 document.body.addEventListener('mousemove', (event) => {
-    cursorDivElm.style.opacity = '50%';
+    cursorDivElm.style.opacity = '0.5';
     cursorDivElm.style.display = 'block';
     cursorDivElm.style.left = event.pageX - cursorDivElm.offsetWidth / 2 + 'px';
     cursorDivElm.style.top = event.pageY - cursorDivElm.offsetHeight / 2 + 'px';
 
     /*when cursor move out of browser*//*check this*/
-    if (cursorDivElm.style.top <= 0 || cursorDivElm.style.left <= 0 || cursorDivElm.style.right >= innerWidth || cursorDivElm.style.bottom >= innerHeight) {
-        cursorDivElm.style.display = 'none';
-    } else {
-        cursorDivElm.style.display = 'block';
-    }
+    // if (cursorDivElm.style.top <= 0 || cursorDivElm.style.left <= 0 || cursorDivElm.style.right >= innerWidth || cursorDivElm.style.bottom >= innerHeight) {
+    //     cursorDivElm.style.display = 'none';
+    // } else {
+    //     cursorDivElm.style.display = 'block';
+    // }
 });
 
 setInterval(function () {
     if (cursorDivElm.style.left === prevX && cursorDivElm.style.top === prevY) {
-        // /*hide timer*/
+        /*hide timer*/
         // let hideTmr = setInterval(function () {
         //     cursorDivElm.style.opacity = (cursorDivElm.style.opacity / 2) + '%';
-        //     if (cursorDivElm.style.opacity <= 0) {
+        //     if (parseFloat(cursorDivElm.style.opacity) <= 0) {
         //         clearInterval(hideTmr);
         //     }
         // }, 100);
@@ -43,12 +43,7 @@ setInterval(function () {
     }
 }, 400);
 
-/*check this for mouse leave*/
-// document.body.addEventListener('mouseleave', (event) => {
-//     let hideTmr = setInterval(function () {
-//         cursorDivElm.style.opacity = (cursorDivElm.style.opacity / 2) + '%';
-//         if (cursorDivElm.style.opacity <= 0) {
-//             clearInterval(hideTmr);
-//         }
-//     }, 100);
-// });
+
+document.body.addEventListener('mouseleave', (event) => {
+    cursorDivElm.style.display = 'none';
+});
