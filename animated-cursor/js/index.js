@@ -6,6 +6,7 @@ const shadowColours = ['red', 'green', 'blue'];
 let shadowColourIndex = 0;
 
 document.body.addEventListener('mousemove', (event) => {
+    cursorDivElm.style.opacity = '50%';
     cursorDivElm.style.display = 'block';
     cursorDivElm.style.left = event.pageX - cursorDivElm.offsetWidth / 2 + 'px';
     cursorDivElm.style.top = event.pageY - cursorDivElm.offsetHeight / 2 + 'px';
@@ -20,6 +21,14 @@ document.body.addEventListener('mousemove', (event) => {
 
 setInterval(function () {
     if (cursorDivElm.style.left === prevX && cursorDivElm.style.top === prevY) {
+        // /*hide timer*/
+        // let hideTmr = setInterval(function () {
+        //     cursorDivElm.style.opacity = (cursorDivElm.style.opacity / 2) + '%';
+        //     if (cursorDivElm.style.opacity <= 0) {
+        //         clearInterval(hideTmr);
+        //     }
+        // }, 100);
+
         cursorDivElm.style.display = 'none';
     }
     prevX = cursorDivElm.style.left;
@@ -33,3 +42,13 @@ setInterval(function () {
         shadowColourIndex = 0;
     }
 }, 400);
+
+/*check this for mouse leave*/
+// document.body.addEventListener('mouseleave', (event) => {
+//     let hideTmr = setInterval(function () {
+//         cursorDivElm.style.opacity = (cursorDivElm.style.opacity / 2) + '%';
+//         if (cursorDivElm.style.opacity <= 0) {
+//             clearInterval(hideTmr);
+//         }
+//     }, 100);
+// });

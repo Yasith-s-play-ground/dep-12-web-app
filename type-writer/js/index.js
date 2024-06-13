@@ -17,12 +17,12 @@ function displayText(index) {
 
         displayWordsLetterByLetter(displayItems[index], 0);
 
-        // let eraseIndex = spanElm.innerText.length - 1;
+        let eraseIndex = displayItems[index].length - 1;
         // console.log(spanElm.innerText);
         // let eraseTmr = setInterval(function () {
-        //     spanElm.innerText = spanElm.innerText.substring(0, eraseIndex--);
+        //     spanElm.innerText = displayItems[index].substring(0, eraseIndex--);
         //     if (eraseIndex === 0) clearInterval(eraseTmr);
-        // }, 50);
+        // }, 25);
 
         if (index++ === displayItems.length - 1) index = 0;
     }, 2000);
