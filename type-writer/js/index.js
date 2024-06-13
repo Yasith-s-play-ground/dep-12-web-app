@@ -27,7 +27,7 @@ function displayText(index) {
         // }, 75 * displayItems[index].length);
 
         if (index++ === displayItems.length - 1) index = 0;
-    }, 75 * displayItems[index].length*2);
+    }, 2000);
 
     //displayText(++index);
 }

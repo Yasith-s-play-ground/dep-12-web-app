@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#cursor-div {
+    width: 100px;
+    height: 100px;
+    background: blue;
+    border-radius: 50%;
+    position: absolute;
+
+    /*opacity: 0;*/
+
+    /*box-shadow: 0px 0px 12px 8px red;*/
+
+
+    /*!*shadow animation*!*/
+    /*animation: shadow 500ms infinite;*/
+
+}
+
+.cursor{
+    /*shadow animation*/
+    animation: shadow 500ms infinite;
+}
+
+.hide {
+    animation: shadow 500ms infinite, fade 500ms forwards;
+
+}
+
+body {
+    /*hide cursor*/
+    cursor: none;
+    overflow: hidden;
+}
+
+.inner-most-shadow {
+    box-shadow: 0px 0px 12px 5px red;
+}
+
+.middle-shadow {
+    box-shadow: 0px 0px 20px 10px #5952c2;
+}
+
+.outer-most-shadow {
+    box-shadow: 0px 0px 30px 20px #b9b8d7;
+
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes shadow {
+    from {
+        box-shadow: 0px 0px 12px 8px red;
+    }
+    to {
+        box-shadow: 0px 0px 30px 15px #b9b8d7;
+    }
+}
